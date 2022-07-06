@@ -1,19 +1,27 @@
-import React, { useState } from 'react'
-import { Button } from 'react-bootstrap'
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 
-
-const WeatherButton = ({ cities,  setCity}) => {
-
-
+const WeatherButton = ({ cities, handleCityChange, selectedCity }) => {
   return (
-    <div>
-      <Button variant='warning'>현재 위치</Button>
-      
-      {cities.map((item, index) => (
-        <Button variant='warning' key={index} onClick={() => setCity(item)}>{ item }</Button>
+    <div className="menu-container">
+      <Button
+        variant={`${selectedCity == "" ? "success" : "outline-success"}`}
+        onClick={() => handleCityChange("current")}
+      >
+        현재 위치
+      </Button>
+
+      {cities.map((city, index) => (
+        <Button
+          variant={`${selectedCity == city ? "success" : "outline-success"}`}
+          key={index}
+          onClick={() => handleCityChange(city)}
+        >
+          {city}
+        </Button>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default WeatherButton;

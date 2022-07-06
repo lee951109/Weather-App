@@ -19,3 +19,7 @@ body {
   border-radius: 20px;
   background-color: azure;
 }
+
+.current_btn:hover{
+  color: white;
+}

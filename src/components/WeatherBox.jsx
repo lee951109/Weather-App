@@ -4,7 +4,7 @@ import React from 'react'
 const WeatherBox = ({weather}) => { //props 생략
 
 
-  // 화씨 구하는 방법 ( 섭씨 * 180 / 100 ) + 32
+  // 화씨 = ( 섭씨 * 180 / 100 ) + 32
   let fahrenheit = (weather?.main.temp * 180 / 100) + 32 
 
   return (
